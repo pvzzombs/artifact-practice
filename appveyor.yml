@@ -1,0 +1,11 @@
+image:
+  - Ubuntu
+
+init:
+  - g++ --version
+  - ls
+
+build_script:
+  - g++ -Wall -fexceptions -O2 -std=c++11  -c main.cpp -o main.o
+  - g++ -o main main.o -s
+  - ./main
