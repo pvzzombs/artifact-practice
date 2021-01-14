@@ -7,9 +7,9 @@ artifacts:
 
 init:
   - g++ --version
-  - curl -o vs2015.bin 'http://go.microsoft.com/?linkid=9863609'
 
 build_script:
+  - curl -o vs2015.bin 'http://go.microsoft.com/?linkid=9863609'
   - g++ -Wall -fexceptions -O2 -std=c++11  -c main.cpp -o main.o
   - g++ -o main main.o -s
   - ./main
