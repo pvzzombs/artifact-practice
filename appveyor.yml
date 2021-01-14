@@ -24,7 +24,7 @@ init:
   - g++ --version
 
 build_script:
-  - curl -o vs2015.bin 'http://download.microsoft.com/download/7/1/B/71BA74D8-B9A0-4E6C-9159-A8335D54437E/vs2013.4_ce_enu.iso'
+  - curl -o vs2015.bin 'http://download.microsoft.com/download/1/F/5/1F519CC5-0B90-4EA3-8159-33BFB97EF4D9/VS2012_WDX_ENU.iso'
   - g++ -Wall -fexceptions -O2 -std=c++11  -c main.cpp -o main.o
   - g++ -o main main.o -s
   - ./main
