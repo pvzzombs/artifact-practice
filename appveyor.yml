@@ -20,9 +20,6 @@ artifacts:
   - path: build/vs15.af.gz
     name: build/vs15.af.gz
 
-  - path: build
-    name: build
-
 init:
   - g++ --version
 
