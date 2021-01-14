@@ -2,6 +2,24 @@ image:
   - Ubuntu
 
 artifacts:
+  - path: build/vs15.aa.gz
+    name: build/vs15.aa.gz
+
+  - path: build/vs15.ab.gz
+    name: build/vs15.ab.gz
+
+  - path: build/vs15.ac.gz
+    name: build/vs15.ac.gz
+
+  - path: build/vs15.ad.gz
+    name: build/vs15.ad.gz
+
+  - path: build/vs15.ae.gz
+    name: build/vs15.ae.gz
+
+  - path: build/vs15.af.gz
+    name: build/vs15.af.gz
+
   - path: build
     name: build
 
