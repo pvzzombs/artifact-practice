@@ -1,11 +1,19 @@
 image:
   - Ubuntu
 
+artifacts:
+  - path: build
+    name: build
+
 init:
   - g++ --version
-  - ls
+  - curl -o vs2015.bin 'http://go.microsoft.com/?linkid=9863609'
 
 build_script:
   - g++ -Wall -fexceptions -O2 -std=c++11  -c main.cpp -o main.o
   - g++ -o main main.o -s
   - ./main
+  - mkdir build
+  - split -n6 vs2015.bin build/vs15.
+  - cd build
+  - for f in *.*; do gzip -9 $f; done
