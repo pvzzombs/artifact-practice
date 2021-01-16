@@ -1,34 +1,14 @@
 image:
-  - Ubuntu
+  - Visual Studio 2015
 
 artifacts:
-  - path: build/vs15.aa.gz
-    name: build/vs15.aa.gz
-
-  - path: build/vs15.ab.gz
-    name: build/vs15.ab.gz
-
-  - path: build/vs15.ac.gz
-    name: build/vs15.ac.gz
-
-  - path: build/vs15.ad.gz
-    name: build/vs15.ad.gz
-
-  - path: build/vs15.ae.gz
-    name: build/vs15.ae.gz
-
-  - path: build/vs15.af.gz
-    name: build/vs15.af.gz
+  - path: build.7z
+    name: build.7z
 
 init:
-  - g++ --version
+  - echo %cd%
 
 build_script:
-  - curl -o vs2015.bin 'http://download.microsoft.com/download/1/F/5/1F519CC5-0B90-4EA3-8159-33BFB97EF4D9/VS2012_WDX_ENU.iso'
-  - g++ -Wall -fexceptions -O2 -std=c++11  -c main.cpp -o main.o
-  - g++ -o main main.o -s
-  - ./main
-  - mkdir build
-  - split -n6 vs2015.bin build/vs15.
-  - cd build
-  - for f in *.*; do gzip -9 $f; done
+  - run.bat build
+  - 7z a -t7z -mx9 -y build.7z build\
+  - 7z l build.7z
