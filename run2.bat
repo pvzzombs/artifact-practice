@@ -28,7 +28,8 @@ xcopy /i "%vs3%\bin\x86" "%~1\sdk\bin" >nul
 xcopy /i "%vs3%\bin\x86\1033" "%~1\sdk\bin\1033" >nul
 xcopy /i "%vs3%\bin\x64" "%~1\sdk\bin\x64" >nul
 xcopy /i "%vs3%\bin\x64\1033" "%~1\sdk\bin\x64\1033" >nul
-rem xcopy c:\windows\%w32%\api-ms-win-*.dll "%~1\bin" >nul
+xcopy c:\windows\syswow64\api-ms-win-*.dll "%~1\bin" >nul
+xcopy c:\windows\system32\api-ms-win-*.dll "%~1\bin" >nul
 xcopy c:\windows\%w32%\*140*.dll "%~1\bin" >nul
 xcopy c:\windows\%w32%\ucrtbase*.dll "%~1\bin" >nul
 xcopy c:\windows\%w32%\VsGraphicsHelper.dll "%~1\bin" >nul
