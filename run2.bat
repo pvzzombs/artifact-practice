@@ -36,7 +36,7 @@ xcopy c:\windows\%w32%\VsGraphicsHelper.dll "%~1\bin" >nul
 rem dir "%vs2%\include"
 echo Copying includes (include, sdk\include)..........
 xcopy /i "%vs1%\vc\include" "%~1\include" /s >nul
-rem xcopy /i "%vs2%\include\10.0.10150.0\ucrt" "%~1\include" /s >nul
+xcopy /i "%vs2%\include\10.0.19041.0\ucrt" "%~1\include" /s >nul
 xcopy /i "%vs3%\include\shared" "%~1\sdk\include" /s >nul
 xcopy /i "%vs3%\include\um" "%~1\sdk\include" /s >nul
 
