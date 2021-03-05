@@ -34,6 +34,14 @@ xcopy c:\windows\%w32%\*140*.dll "%~1\bin" >nul
 xcopy c:\windows\%w32%\ucrtbase*.dll "%~1\bin" >nul
 xcopy c:\windows\%w32%\VsGraphicsHelper.dll "%~1\bin" >nul
 
+dir "%vs3%\Debuggers"
+dir "%vs2%\Debuggers"
+echo Copying debuggers (cdb,windbg)..........
+xcopy /i "%vs3%\Debuggers" "%~1\Debuggers" >nul
+xcopy /i "%vs2%\Debuggers" "%~1\Debuggers" >nul
+xcopy /i "%vs3%\Debuggers\x64" "%~1\Debuggers\x64" >nul
+xcopy /i "%vs2%\Debuggers\x64" "%~1\Debuggers\x64" >nul
+
 rem dir "%vs2%\include"
 echo Copying includes (include, sdk\include)..........
 xcopy /i "%vs1%\vc\include" "%~1\include" /s >nul
