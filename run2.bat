@@ -32,12 +32,15 @@ xcopy c:\windows\%w32%\*140*.dll "%~1\bin" >nul
 xcopy c:\windows\%w32%\ucrtbase*.dll "%~1\bin" >nul
 xcopy c:\windows\%w32%\VsGraphicsHelper.dll "%~1\bin" >nul
 
+dir "%vs2%\include"
 echo Copying includes (include, sdk\include)..........
 xcopy /i "%vs1%\vc\include" "%~1\include" /s >nul
 xcopy /i "%vs2%\include\10.0.10150.0\ucrt" "%~1\include" /s >nul
 xcopy /i "%vs3%\include\shared" "%~1\sdk\include" /s >nul
 xcopy /i "%vs3%\include\um" "%~1\sdk\include" /s >nul
 
+dir "%vs1%\lib"
+dir "%vs2%\lib"
 echo Copying libraries (lib, sdk\lib)..........
 xcopy /i "%vs1%\VC\lib" "%~1\lib" >nul
 xcopy /i "%vs2%\lib\10.0.10150.0\ucrt\x86" "%~1\lib" >nul
