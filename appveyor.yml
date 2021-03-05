@@ -9,6 +9,6 @@ init:
   - echo %cd%
 
 build_script:
-  - run.bat build
+  - run2.bat build
   - 7z a -t7z -mx9 -y build.7z build\
   - 7z l build.7z
