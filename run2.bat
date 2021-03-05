@@ -34,8 +34,8 @@ rem xcopy c:\windows\%w32%\*140*.dll "%~1\bin" >nul
 rem xcopy c:\windows\%w32%\ucrtbase*.dll "%~1\bin" >nul
 rem xcopy c:\windows\%w32%\VsGraphicsHelper.dll "%~1\bin" >nul
 
-dir "%vs3%\Debuggers"
-dir "%vs2%\Debuggers"
+rem dir "%vs3%\Debuggers"
+rem dir "%vs2%\Debuggers"
 echo Copying debuggers (cdb,windbg)..........
 xcopy "%vs3%\Debuggers\x86\cdb.exe" "%~1\Debuggers\x86\cdb.exe" >nul
 xcopy "%vs2%\Debuggers\x86\cdb.exe" "%~1\Debuggers\x86\cdb.exe" >nul
