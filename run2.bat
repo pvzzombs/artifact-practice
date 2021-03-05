@@ -18,6 +18,7 @@ if not "%emsg%"=="" echo %emsg%& goto :eof
 
 if exist "%~1" echo dir "%~1" exists... delete it first& goto :eof
 
+dir "c:\windows\%w32%"
 echo Copying binaries (bin, sdk\bin)..........
 xcopy /i "%vs1%\VC\bin" "%~1\bin" >nul
 xcopy /i "%vs1%\VC\bin\1033" "%~1\bin\1033" >nul
