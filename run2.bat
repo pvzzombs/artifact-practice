@@ -4,13 +4,13 @@ if "%~1"=="" echo Copies minimal files to run CL 14.28 (32 and 64 bit)
 if "%~1"=="" echo First arg must be target directory& goto :eof
 
 if exist "c:\Program Files (x86)\." set "x86= (x86)"& set w32=syswow64
-dir "c:\Program Files(x86)\"
+dir "c:\Program Files%x86%\"
 set vs1=c:\Program Files%x86%\Microsoft Visual Studio 14.28
-dir %vs1%
+dir "%vs1%"
 set vs2=c:\Program Files%x86%\Windows Kits\10
-dir %vs2%
+dir "%vs2%"
 set vs3=c:\Program Files%x86%\Windows Kits\8.1
-dir %vs3%
+dir "%vs3%"
 
 set emsg=Can't find src dir - run on system where compiler is installed
 if exist "%vs1%" if exist "%vs2%" if exist "%vs3%" set emsg=
