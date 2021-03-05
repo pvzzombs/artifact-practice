@@ -24,7 +24,7 @@ rem xcopy /i "%vs1%\VC\bin" "%~1\bin" >nul
 rem xcopy /i "%vs1%\VC\bin\1033" "%~1\bin\1033" >nul
 rem xcopy /i "%vs1%\VC\bin\x86_amd64" "%~1\bin\x86_amd64" >nul
 rem xcopy /i "%vs1%\VC\bin\x86_amd64\1033" "%~1\bin\x86_amd64\1033" >nul
-rem xcopy /i "%vs3%\bin\x86" "%~1\sdk\bin" >nul
+xcopy /i "%vs3%\bin\x86" "%~1\sdk\bin" >nul
 rem xcopy /i "%vs3%\bin\x86\1033" "%~1\sdk\bin\1033" >nul
 rem xcopy /i "%vs3%\bin\x64" "%~1\sdk\bin\x64" >nul
 rem xcopy /i "%vs3%\bin\x64\1033" "%~1\sdk\bin\x64\1033" >nul
@@ -37,10 +37,10 @@ rem xcopy c:\windows\%w32%\VsGraphicsHelper.dll "%~1\bin" >nul
 rem dir "%vs3%\Debuggers"
 rem dir "%vs2%\Debuggers"
 echo Copying debuggers (cdb,windbg)..........
-xcopy "%vs3%\Debuggers\x86\cdb.exe" "%~1\Debuggers\x86\cdb.exe" /f /u /i
-xcopy "%vs2%\Debuggers\x86\cdb.exe" "%~1\Debuggers\x86\cdb.exe" /f /u /i
-xcopy "%vs3%\Debuggers\x64\cdb.exe" "%~1\Debuggers\x64\cdb.exe" /f /u /i
-xcopy "%vs2%\Debuggers\x64\cdb.exe" "%~1\Debuggers\x64\cdb.exe" /f /u /i
+xcopy "%vs3%\Debuggers\x86\cdb.exe" "%~1\Debuggers\x86\cdb" /f /u /i
+xcopy "%vs2%\Debuggers\x86\cdb.exe" "%~1\Debuggers\x86\cdb" /f /u /i
+xcopy "%vs3%\Debuggers\x64\cdb.exe" "%~1\Debuggers\x64\cdb" /f /u /i
+xcopy "%vs2%\Debuggers\x64\cdb.exe" "%~1\Debuggers\x64\cdb" /f /u /i
 
 rem dir "%vs2%\include"
 rem echo Copying includes (include, sdk\include)..........
