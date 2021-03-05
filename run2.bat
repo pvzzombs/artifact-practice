@@ -37,10 +37,10 @@ rem xcopy c:\windows\%w32%\VsGraphicsHelper.dll "%~1\bin" >nul
 rem dir "%vs3%\Debuggers"
 rem dir "%vs2%\Debuggers"
 echo Copying debuggers (cdb,windbg)..........
-echo D|xcopy "%vs3%\Debuggers\x86\cdb.exe" "%~1\Debuggers\x86\cdb\" /F /Y
-echo D|xcopy "%vs2%\Debuggers\x86\cdb.exe" "%~1\Debuggers\x86\cdb\" /F /Y
-echo D|xcopy "%vs3%\Debuggers\x64\cdb.exe" "%~1\Debuggers\x64\cdb\" /F /Y
-echo D|xcopy "%vs2%\Debuggers\x64\cdb.exe" "%~1\Debuggers\x64\cdb\" /F /Y
+xcopy /I "%vs3%\Debuggers\x86" "%~1\Debuggers\x86\" /F /Y
+xcopy /I "%vs2%\Debuggers\x86" "%~1\Debuggers\x86\" /F /Y
+xcopy /I "%vs3%\Debuggers\x64" "%~1\Debuggers\x64\" /F /Y
+xcopy /I "%vs2%\Debuggers\x64" "%~1\Debuggers\x64\" /F /Y
 
 rem dir "%vs2%\include"
 rem echo Copying includes (include, sdk\include)..........
