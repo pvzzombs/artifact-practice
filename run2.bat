@@ -1,11 +1,11 @@
 @echo off& setlocal& set x86=& set w32=system32
 rem http://paulhoule.com/msvc14/copymsvc14.bat    May 28, 2016
-if "%~1"=="" echo Copies minimal files to run CL 14.28 (32 and 64 bit)
+if "%~1"=="" echo Copies minimal files to run CL 14.0 (32 and 64 bit)
 if "%~1"=="" echo First arg must be target directory& goto :eof
 
 if exist "c:\Program Files (x86)\." set "x86= (x86)"& set w32=syswow64
 dir "c:\Program Files%x86%\"
-set vs1=c:\Program Files%x86%\Microsoft Visual Studio 14.28
+set vs1=c:\Program Files%x86%\Microsoft Visual Studio 14.0
 dir "%vs1%"
 set vs2=c:\Program Files%x86%\Windows Kits\10
 dir "%vs2%"
