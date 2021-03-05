@@ -20,41 +20,37 @@ if exist "%~1" echo dir "%~1" exists... delete it first& goto :eof
 
 rem dir "c:\windows\%w32%"
 echo Copying binaries (bin, sdk\bin)..........
-rem xcopy /i "%vs1%\VC\bin" "%~1\bin" >nul
-rem xcopy /i "%vs1%\VC\bin\1033" "%~1\bin\1033" >nul
-rem xcopy /i "%vs1%\VC\bin\x86_amd64" "%~1\bin\x86_amd64" >nul
-rem xcopy /i "%vs1%\VC\bin\x86_amd64\1033" "%~1\bin\x86_amd64\1033" >nul
-rem xcopy /i "%vs3%\bin\x86" "%~1\sdk\bin" >nul
-rem xcopy /i "%vs3%\bin\x86\1033" "%~1\sdk\bin\1033" >nul
-rem xcopy /i "%vs3%\bin\x64" "%~1\sdk\bin\x64" >nul
-rem xcopy /i "%vs3%\bin\x64\1033" "%~1\sdk\bin\x64\1033" >nul
-rem xcopy c:\windows\syswow64\api-ms-win-*.dll "%~1\bin" >nul
-rem xcopy c:\windows\system32\api-ms-win-*.dll "%~1\bin" >nul
-rem xcopy c:\windows\%w32%\*140*.dll "%~1\bin" >nul
-rem xcopy c:\windows\%w32%\ucrtbase*.dll "%~1\bin" >nul
-rem xcopy c:\windows\%w32%\VsGraphicsHelper.dll "%~1\bin" >nul
-
-rem dir "%vs3%\Debuggers"
-rem dir "%vs2%\Debuggers"
-echo Copying debuggers (cdb,windbg)..........
-xcopy /I "%vs3%\Debuggers\x86" "%~1\Debuggers\x86\" /F /Y
-xcopy /I "%vs2%\Debuggers\x86" "%~1\Debuggers\x86\" /F /Y
-xcopy /I "%vs3%\Debuggers\x64" "%~1\Debuggers\x64\" /F /Y
-xcopy /I "%vs2%\Debuggers\x64" "%~1\Debuggers\x64\" /F /Y
+xcopy /i "%vs1%\VC\bin" "%~1\bin" >nul
+xcopy /i "%vs1%\VC\bin\1033" "%~1\bin\1033" >nul
+xcopy /i "%vs1%\VC\bin\x86_amd64" "%~1\bin\x86_amd64" >nul
+xcopy /i "%vs1%\VC\bin\x86_amd64\1033" "%~1\bin\x86_amd64\1033" >nul
+xcopy /i "%vs3%\bin\x86" "%~1\sdk\bin" >nul
+xcopy /i "%vs3%\bin\x86\1033" "%~1\sdk\bin\1033" >nul
+xcopy /i "%vs3%\bin\x64" "%~1\sdk\bin\x64" >nul
+xcopy /i "%vs3%\bin\x64\1033" "%~1\sdk\bin\x64\1033" >nul
+xcopy /i /y /f "%vs3%\Debuggers\x86" "%~1\bin\Debuggers\x86\" >nul
+xcopy /i /y /f "%vs2%\Debuggers\x86" "%~1\bin\Debuggers\x86\" >nul
+xcopy /i /y /f "%vs3%\Debuggers\x64" "%~1\bin\Debuggers\x64\" >nul
+xcopy /i /y /f "%vs2%\Debuggers\x64" "%~1\bin\Debuggers\x64\" >nul
+xcopy c:\windows\syswow64\api-ms-win-*.dll "%~1\bin" >nul
+xcopy c:\windows\system32\api-ms-win-*.dll "%~1\bin" >nul
+xcopy c:\windows\%w32%\*140*.dll "%~1\bin" >nul
+xcopy c:\windows\%w32%\ucrtbase*.dll "%~1\bin" >nul
+xcopy c:\windows\%w32%\VsGraphicsHelper.dll "%~1\bin" >nul
 
 rem dir "%vs2%\include"
-rem echo Copying includes (include, sdk\include)..........
-rem xcopy /i "%vs1%\vc\include" "%~1\include" /s >nul
-rem xcopy /i "%vs2%\include\10.0.19041.0\ucrt" "%~1\include" /s >nul
-rem xcopy /i "%vs3%\include\shared" "%~1\sdk\include" /s >nul
-rem xcopy /i "%vs3%\include\um" "%~1\sdk\include" /s >nul
-rem 
-rem rem dir "%vs1%\lib"
-rem rem dir "%vs2%\lib"
-rem echo Copying libraries (lib, sdk\lib)..........
-rem xcopy /i "%vs1%\VC\lib" "%~1\lib" >nul
-rem xcopy /i "%vs2%\lib\10.0.19041.0\ucrt\x86" "%~1\lib" >nul
-rem xcopy /i "%vs3%\lib\winv6.3\um\x86" "%~1\sdk\lib" >nul
-rem xcopy /i "%vs1%\VC\lib\amd64" "%~1\lib\amd64" >nul
-rem xcopy /i "%vs2%\lib\10.0.19041.0\ucrt\x64" "%~1\lib\amd64" >nul
-rem xcopy /i "%vs3%\lib\winv6.3\um\x64" "%~1\sdk\lib\x64" >nul
+echo Copying includes (include, sdk\include)..........
+xcopy /i "%vs1%\vc\include" "%~1\include" /s >nul
+xcopy /i "%vs2%\include\10.0.19041.0\ucrt" "%~1\include" /s >nul
+xcopy /i "%vs3%\include\shared" "%~1\sdk\include" /s >nul
+xcopy /i "%vs3%\include\um" "%~1\sdk\include" /s >nul
+
+rem dir "%vs1%\lib"
+rem dir "%vs2%\lib"
+echo Copying libraries (lib, sdk\lib)..........
+xcopy /i "%vs1%\VC\lib" "%~1\lib" >nul
+xcopy /i "%vs2%\lib\10.0.19041.0\ucrt\x86" "%~1\lib" >nul
+xcopy /i "%vs3%\lib\winv6.3\um\x86" "%~1\sdk\lib" >nul
+xcopy /i "%vs1%\VC\lib\amd64" "%~1\lib\amd64" >nul
+xcopy /i "%vs2%\lib\10.0.19041.0\ucrt\x64" "%~1\lib\amd64" >nul
+xcopy /i "%vs3%\lib\winv6.3\um\x64" "%~1\sdk\lib\x64" >nul
