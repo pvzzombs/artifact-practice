@@ -4,14 +4,14 @@ if "%~1"=="" echo Copies minimal files to run CL 14.0 (32 and 64 bit)
 if "%~1"=="" echo First arg must be target directory& goto :eof
 
 if exist "c:\Program Files (x86)\." set "x86= (x86)"& set w32=syswow64
-dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\Common7\IDE"
+rem dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\Common7\IDE"
 dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\Common7\IDE\1033"
-dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\Common7\IDE\VC\bin"
+rem dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\Common7\IDE\VC\bin"
 dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333"
 dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\bin"
 dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include"
 dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\lib"
-dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\crt"
+dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\crt\src"
 dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\VSSDK"
 set vs1=c:\Program Files%x86%\Microsoft Visual Studio\2019\Community
 rem dir "%vs1%"
