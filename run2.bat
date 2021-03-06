@@ -7,9 +7,11 @@ if exist "c:\Program Files (x86)\." set "x86= (x86)"& set w32=syswow64
 dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\Common7\IDE"
 dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\Common7\IDE\1033"
 dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\Common7\IDE\VC\bin"
-dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\MSBuild\Sdks"
-dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\SDK"
 dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333"
+dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\bin"
+dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include"
+dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\lib"
+dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\crt"
 dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\VSSDK"
 set vs1=c:\Program Files%x86%\Microsoft Visual Studio\2019\Community
 rem dir "%vs1%"
