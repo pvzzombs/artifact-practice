@@ -7,11 +7,6 @@ if exist "c:\Program Files (x86)\." set "x86= (x86)"& set w32=syswow64
 rem rem dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\Common7\IDE"
 dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\Common7\IDE\1033"
 rem rem dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\Common7\IDE\VC\bin"
-dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\atlmfc"
-dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\bin\Hostx86"
-rem dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include"
-dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\lib\x86"
-dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\crt\src\i386"
 set vs1=c:\Program Files%x86%\Microsoft Visual Studio\2019\Community
 rem dir "%vs1%"
 set vs2=c:\Program Files%x86%\Windows Kits\10
@@ -19,14 +14,16 @@ rem dir "%vs2%"
 set vs3=c:\Program Files%x86%\Windows Kits\8.1
 rem dir "%vs3%"
 
-rem set emsg=Can't find src dir - run on system where compiler is installed
-rem if exist "%vs1%" if exist "%vs2%" if exist "%vs3%" set emsg=
-rem if not "%emsg%"=="" echo %emsg%& goto :eof
-rem 
-rem if exist "%~1" echo dir "%~1" exists... delete it first& goto :eof
-rem 
+set emsg=Can't find src dir - run on system where compiler is installed
+if exist "%vs1%" if exist "%vs2%" if exist "%vs3%" set emsg=
+if not "%emsg%"=="" echo %emsg%& goto :eof
+
+if exist "%~1" echo dir "%~1" exists... delete it first& goto :eof
+
 rem rem dir "c:\windows\%w32%"
-rem echo Copying binaries (bin, sdk\bin)..........
+echo Copying binaries (bin, sdk\bin)..........
+xcopy /i "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86" "%~1\bin\x86" >nul
+xcopy /i "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86" "%~1\bin\x64" >nul
 rem xcopy /i "%vs1%\VC\bin" "%~1\bin" >nul
 rem xcopy /i "%vs1%\VC\bin\1033" "%~1\bin\1033" >nul
 rem xcopy /i "%vs1%\VC\bin\x86_amd64" "%~1\bin\x86_amd64" >nul
@@ -46,18 +43,21 @@ rem xcopy c:\windows\%w32%\ucrtbase*.dll "%~1\bin" >nul
 rem xcopy c:\windows\%w32%\VsGraphicsHelper.dll "%~1\bin" >nul
 rem 
 rem rem dir "%vs2%\include"
-rem echo Copying includes (include, sdk\include)..........
+echo Copying includes (include, sdk\include)..........
 rem xcopy /i "%vs1%\vc\include" "%~1\include" /s >nul
-rem xcopy /i "%vs2%\include\10.0.19041.0\ucrt" "%~1\include" /s >nul
+xcopy /i "%vs1%\VC\Tools\MSVC\14.28.29333\include" "%~1\include" /s >nul
+xcopy /i "%vs2%\include\10.0.19041.0\ucrt" "%~1\include" /s >nul
 rem xcopy /i "%vs3%\include\shared" "%~1\sdk\include" /s >nul
 rem xcopy /i "%vs3%\include\um" "%~1\sdk\include" /s >nul
 rem 
 rem rem dir "%vs1%\lib"
 rem rem dir "%vs2%\lib"
-rem echo Copying libraries (lib, sdk\lib)..........
+echo Copying libraries (lib, sdk\lib)..........
 rem xcopy /i "%vs1%\VC\lib" "%~1\lib" >nul
-rem xcopy /i "%vs2%\lib\10.0.19041.0\ucrt\x86" "%~1\lib" >nul
+xcopy /i "%vs1%\VC\Tools\MSVC\14.28.29333\lib\x86" "%~1\lib\x86" >nul
+xcopy /i "%vs1%\VC\Tools\MSVC\14.28.29333\lib\x64" "%~1\lib\x64" >nul
+xcopy /i "%vs2%\lib\10.0.19041.0\ucrt\x86" "%~1\lib" >nul
 rem xcopy /i "%vs3%\lib\winv6.3\um\x86" "%~1\sdk\lib" >nul
 rem xcopy /i "%vs1%\VC\lib\amd64" "%~1\lib\amd64" >nul
-rem xcopy /i "%vs2%\lib\10.0.19041.0\ucrt\x64" "%~1\lib\amd64" >nul
+xcopy /i "%vs2%\lib\10.0.19041.0\ucrt\x64" "%~1\lib\amd64" >nul
 rem xcopy /i "%vs3%\lib\winv6.3\um\x64" "%~1\sdk\lib\x64" >nul
