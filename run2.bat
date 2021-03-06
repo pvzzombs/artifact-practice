@@ -4,8 +4,8 @@ if "%~1"=="" echo Copies minimal files to run CL 14.0 (32 and 64 bit)
 if "%~1"=="" echo First arg must be target directory& goto :eof
 
 if exist "c:\Program Files (x86)\." set "x86= (x86)"& set w32=syswow64
-rem dir "c:\Program Files%x86%\"
-set vs1=c:\Program Files%x86%\Microsoft Visual Studio 14.0
+dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community"
+set vs1=c:\Program Files%x86%\Microsoft Visual Studio\2019\Community
 rem dir "%vs1%"
 set vs2=c:\Program Files%x86%\Windows Kits\10
 rem dir "%vs2%"
