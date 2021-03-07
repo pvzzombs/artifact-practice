@@ -22,14 +22,13 @@ if not "%emsg%"=="" echo %emsg%& goto :eof
 
 if exist "%~1" echo dir "%~1" exists... delete it first& goto :eof
 
-rem dir "%vs1%\VC\Tools\MSVC\14.28.29333\atlmfc"
-rem dir "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86\1033"
+rem rem dir "c:\windows\%w32%"
 echo Copying binaries (bin, sdk\bin)..........
 xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86" "%~1\bin" >nul
 xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86" "%~1\bin\x64" >nul
 rem xcopy /i "%vs1%\VC\bin" "%~1\bin" >nul
 rem xcopy /i "%vs1%\VC\bin\1033" "%~1\bin\1033" >nul
-xcopy /i "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86\1033" "%~1\bin\1033" >nul
+xcopy /i "%vs4%\VC\bin\1033" "%~1\bin\1033" >nul
 rem xcopy /i /y "%vs1%\Common7\IDE\1033" "%~1\bin\1033" >nul
 rem xcopy /i "%vs1%\VC\bin\x86_amd64" "%~1\bin\x86_amd64" >nul
 rem xcopy /i "%vs1%\VC\bin\x86_amd64\1033" "%~1\bin\x86_amd64\1033" >nul
