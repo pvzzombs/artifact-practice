@@ -13,9 +13,11 @@ set vs2=c:\Program Files%x86%\Windows Kits\10
 rem dir "%vs2%"
 set vs3=c:\Program Files%x86%\Windows Kits\8.1
 rem dir "%vs3%"
+set vs4=c:\Program Files%x86%\Microsoft Visual Studio 14.0
+rem dir "%vs4%"
 
 set emsg=Can't find src dir - run on system where compiler is installed
-if exist "%vs1%" if exist "%vs2%" if exist "%vs3%" set emsg=
+if exist "%vs1%" if exist "%vs2%" if exist "%vs3%" if exist "%vs4%" set emsg=
 if not "%emsg%"=="" echo %emsg%& goto :eof
 
 if exist "%~1" echo dir "%~1" exists... delete it first& goto :eof
@@ -26,6 +28,7 @@ xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86" "%~1\bin" >nul
 xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86" "%~1\bin\x64" >nul
 rem xcopy /i "%vs1%\VC\bin" "%~1\bin" >nul
 xcopy /i "%vs1%\VC\bin\1033" "%~1\bin\1033" >nul
+xcopy /i "%vs4%\VC\bin\1033" "%~1\bin\1033" >nul
 rem xcopy /i /y "%vs1%\Common7\IDE\1033" "%~1\bin\1033" >nul
 rem xcopy /i "%vs1%\VC\bin\x86_amd64" "%~1\bin\x86_amd64" >nul
 rem xcopy /i "%vs1%\VC\bin\x86_amd64\1033" "%~1\bin\x86_amd64\1033" >nul
