@@ -37,12 +37,12 @@ rem xcopy /i /y /f "%vs2%\Debuggers\x86" "%~1\bin\Debuggers\x86\" >nul
 rem xcopy /i /y /f "%vs3%\Debuggers\x64" "%~1\bin\Debuggers\x64\" >nul
 rem xcopy /i /y /f "%vs2%\Debuggers\x64" "%~1\bin\Debuggers\x64\" >nul
 xcopy /y c:\windows\system32\api-ms-win-*.dll "%~1\bin" >nul
-xcopy /y c:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\api-ms-win-*.dll "%~1\bin" >nul
+xcopy /y "c:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\api-ms-win-*.dll" "%~1\bin" >nul
 xcopy /y c:\windows\%w32%\ucrtbase*.dll "%~1\bin" >nul
 xcopy /y c:\windows\%w32%\*140*.dll "%~1\bin" >nul
 xcopy /y c:\windows\%w32%\VsGraphicsHelper.dll "%~1\bin" >nul
-xcopy /y c:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\*140*.dll "%~1\bin" >nul
-xcopy /y c:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\ucrtbase*.dll "%~1\bin" >nul
+xcopy /y "c:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\*140*.dll" "%~1\bin" >nul
+xcopy /y "c:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\ucrtbase*.dll" "%~1\bin" >nul
 rem 
 rem rem dir "%vs2%\include"
 echo Copying includes (include, sdk\include)..........
