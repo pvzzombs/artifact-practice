@@ -26,7 +26,7 @@ rem dir "%vs1%\VC\Tools\MSVC\14.28.29333\atlmfc"
 rem dir "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86\1033"
 echo Copying binaries (bin, sdk\bin)..........
 xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86" "%~1\bin" >nul
-rem ~xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86" "%~1\bin\x64" >nul
+xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86" "%~1\bin\x64" >nul
 rem xcopy /i "%vs1%\VC\bin" "%~1\bin" >nul
 rem xcopy /i "%vs1%\VC\bin\1033" "%~1\bin\1033" >nul
 xcopy /i "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86\1033" "%~1\bin\1033" >nul
@@ -35,8 +35,8 @@ rem xcopy /i "%vs1%\VC\bin\x86_amd64" "%~1\bin\x86_amd64" >nul
 rem xcopy /i "%vs1%\VC\bin\x86_amd64\1033" "%~1\bin\x86_amd64\1033" >nul
 xcopy /i /y "%vs3%\bin\x86" "%~1\sdk\bin" >nul
 xcopy /i /y "%vs3%\bin\x86\1033" "%~1\sdk\bin\1033" >nul
-rem ~xcopy /i /y "%vs3%\bin\x64" "%~1\sdk\bin\x64" >nul
-rem ~xcopy /i /y "%vs3%\bin\x64\1033" "%~1\sdk\bin\x64\1033" >nul
+xcopy /i /y "%vs3%\bin\x64" "%~1\sdk\bin\x64" >nul
+xcopy /i /y "%vs3%\bin\x64\1033" "%~1\sdk\bin\x64\1033" >nul
 rem xcopy /i /y /f "%vs3%\Debuggers\x86" "%~1\bin\Debuggers\x86\" >nul
 rem xcopy /i /y /f "%vs2%\Debuggers\x86" "%~1\bin\Debuggers\x86\" >nul
 rem xcopy /i /y /f "%vs3%\Debuggers\x64" "%~1\bin\Debuggers\x64\" >nul
@@ -62,9 +62,9 @@ rem rem dir "%vs2%\lib"
 echo Copying libraries (lib, sdk\lib)..........
 rem xcopy /i "%vs1%\VC\lib" "%~1\lib" >nul
 xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\lib\x86" "%~1\lib" >nul
-rem ~xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\lib\x64" "%~1\lib\x64" >nul
+xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\lib\x64" "%~1\lib\x64" >nul
 xcopy /i /y "%vs2%\lib\10.0.19041.0\ucrt\x86" "%~1\lib" >nul
 xcopy /i "%vs3%\lib\winv6.3\um\x86" "%~1\sdk\lib" >nul
 rem xcopy /i "%vs1%\VC\lib\amd64" "%~1\lib\amd64" >nul
 rem xcopy /i /y "%vs2%\lib\10.0.19041.0\ucrt\x64" "%~1\lib\amd64" >nul
-rem ~xcopy /i "%vs3%\lib\winv6.3\um\x64" "%~1\sdk\lib\x64" >nul
+xcopy /i "%vs3%\lib\winv6.3\um\x64" "%~1\sdk\lib\x64" >nul
