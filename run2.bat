@@ -22,7 +22,7 @@ if exist "%~1" echo dir "%~1" exists... delete it first& goto :eof
 
 rem rem dir "c:\windows\%w32%"
 echo Copying binaries (bin, sdk\bin)..........
-xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86" "%~1\bin\x86" >nul
+xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86" "%~1\bin" >nul
 xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86" "%~1\bin\x64" >nul
 rem xcopy /i "%vs1%\VC\bin" "%~1\bin" >nul
 xcopy /i "%vs1%\VC\bin\1033" "%~1\bin\1033" >nul
@@ -57,7 +57,7 @@ rem rem dir "%vs1%\lib"
 rem rem dir "%vs2%\lib"
 echo Copying libraries (lib, sdk\lib)..........
 rem xcopy /i "%vs1%\VC\lib" "%~1\lib" >nul
-xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\lib\x86" "%~1\lib\x86" >nul
+xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\lib\x86" "%~1\lib" >nul
 xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\lib\x64" "%~1\lib\x64" >nul
 xcopy /i /y "%vs2%\lib\10.0.19041.0\ucrt\x86" "%~1\lib" >nul
 xcopy /i "%vs3%\lib\winv6.3\um\x86" "%~1\sdk\lib" >nul
