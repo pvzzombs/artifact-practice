@@ -5,7 +5,7 @@ if "%~1"=="" echo First arg must be target directory& goto :eof
 
 if exist "c:\Program Files (x86)\." set "x86= (x86)"& set w32=syswow64
 rem rem dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\Common7\IDE"
-dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\Common7\IDE\1033"
+rem dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\Common7\IDE\1033"
 rem rem dir "c:\Program Files%x86%\Microsoft Visual Studio\2019\Community\Common7\IDE\VC\bin"
 set vs1=c:\Program Files%x86%\Microsoft Visual Studio\2019\Community
 rem dir "%vs1%"
@@ -25,7 +25,8 @@ echo Copying binaries (bin, sdk\bin)..........
 xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86" "%~1\bin\x86" >nul
 xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86" "%~1\bin\x64" >nul
 rem xcopy /i "%vs1%\VC\bin" "%~1\bin" >nul
-rem xcopy /i "%vs1%\VC\bin\1033" "%~1\bin\1033" >nul
+xcopy /i "%vs1%\VC\bin\1033" "%~1\bin\1033" >nul
+rem xcopy /i /y "%vs1%\Common7\IDE\1033" "%~1\bin\1033" >nul
 rem xcopy /i "%vs1%\VC\bin\x86_amd64" "%~1\bin\x86_amd64" >nul
 rem xcopy /i "%vs1%\VC\bin\x86_amd64\1033" "%~1\bin\x86_amd64\1033" >nul
 xcopy /i /y "%vs3%\bin\x86" "%~1\sdk\bin" >nul
