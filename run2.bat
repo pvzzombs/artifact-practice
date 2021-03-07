@@ -26,7 +26,7 @@ xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86" "%~1\bin\x86" >nul
 xcopy /i /y "%vs1%\VC\Tools\MSVC\14.28.29333\bin\Hostx86\x86" "%~1\bin\x64" >nul
 rem xcopy /i "%vs1%\VC\bin" "%~1\bin" >nul
 xcopy /i "%vs1%\VC\bin\1033" "%~1\bin\1033" >nul
-xcopy /i /y "%vs1%\Common7\IDE\1033" "%~1\bin\1033" >nul
+rem xcopy /i /y "%vs1%\Common7\IDE\1033" "%~1\bin\1033" >nul
 rem xcopy /i "%vs1%\VC\bin\x86_amd64" "%~1\bin\x86_amd64" >nul
 rem xcopy /i "%vs1%\VC\bin\x86_amd64\1033" "%~1\bin\x86_amd64\1033" >nul
 xcopy /i /y "%vs3%\bin\x86" "%~1\sdk\bin" >nul
